@@ -41,5 +41,5 @@ where,
         
 where, 
 
-        p_(L)(x) = soft_threshold(x, L).
+        p_L(x) = soft_threshold(x, L).
 
