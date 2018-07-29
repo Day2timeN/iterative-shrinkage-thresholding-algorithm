@@ -22,11 +22,11 @@ where,
         
 (P2) is equal to `l1` [proximal operator](https://en.wikipedia.org/wiki/Proximal_operator),
 
-        prox_(l1)(x_(k)) = soft_threshold(x, L)
+        prox_(L * l1)( x_(k) ) = soft_threshold(x_(k), L)
         
 where, 
 
-        l1 is || x ||_1.
+        l1 is || x ||_1 and L is thresholding value.
 
 `soft_threshold` is defined by,
         
@@ -36,10 +36,10 @@ where,
 
 ## The basic iteration ISTA for solving problem (P2)
         for k = 1 : N
-            x_(k+1) = p_L( x_(k) )
+            x_(k+1) = prox_(L * l1)( x_(k) )
         end
         
 where, 
 
-        p_L(x) = soft_threshold(x, L).
+        prox_(L * l1)( x ) = soft_threshold(x, L).
 
