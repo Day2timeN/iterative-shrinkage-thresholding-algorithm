@@ -18,7 +18,7 @@ Equivalently,
 
 where,
 
-        x_(k)    = x_(k-1) - t_(k) * AT(A(x) - y).
+        x_(k) = x_(k-1) - t_(k) * AT(A(x) - y) and t_(k) is step size. 
         
 (P2) is equal to `l1` [proximal operator](https://en.wikipedia.org/wiki/Proximal_operator),
 
