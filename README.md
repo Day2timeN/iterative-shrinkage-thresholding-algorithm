@@ -36,7 +36,7 @@ where,
             y = (max(abs(x) - L, 0)).*sign(x);
         end
 
-## The basic iteration ISTA for solving problem (P2)
+## The basic iteration ISTA for solving problem (P1 = P2)
         for k = 1 : N
             x_(k+1) = prox_(L * l1)( x_(k) )
         end
