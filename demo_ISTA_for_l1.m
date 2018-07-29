@@ -3,7 +3,7 @@
 
 %% 
 % COST FUNCTION
-% x^* = argmin_x { 1/2 * || A(X) - Y ||_2^2 + lambda/2 * ( || X ||_1 ) }
+% x^* = argmin_x { 1/2 * || A(X) - Y ||_2^2 + lambda * ( || X ||_1 ) }
 %
 % x^k+1 = threshold(x^k - 1/L*AT(A(x^k)) - Y), lambda/L)
 
