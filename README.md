@@ -4,7 +4,7 @@
 Proximal Gradient Methods for learning
 - https://en.wikipedia.org/wiki/Proximal_gradient_methods_for_learning
 
-## Iterative Shrinkage Thresholding Algorithm (ISTA)
+## Iterative Shrinkage-Thresholding Algorithm (ISTA)
 The class of iterative shrinkage-thresholding algorithms (ISTA) for solving linear inverse problems arising in signal/image processing. This class of methods, which can be viewed as an extension of [the classical gradient algorithm](https://en.wikipedia.org/wiki/Gradient_descent), is attractive due to its simplicity and thus is adequate for solving large-scale problems even with dense matrix data.
 
 ## Cost function 
