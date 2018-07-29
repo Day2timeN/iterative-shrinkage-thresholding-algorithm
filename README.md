@@ -8,6 +8,8 @@ Proximal Gradient Methods for learning
 The class of iterative shrinkage-thresholding algorithms (ISTA) for solving linear inverse problems arising in signal/image processing. This class of methods, which can be viewed as an extension of [the classical gradient algorithm](https://en.wikipedia.org/wiki/Gradient_descent), is attractive due to its simplicity and thus is adequate for solving large-scale problems even with dense matrix data.
 
 ## Cost function 
+Cost function is fomulated by data fidelty term `1/2 || A(x) - y ||_2^2` and l1 regularization `L * || X ||_1` as follow,
+
         (P1) arg min_x 1/2 || A(x) - y ||_2^2 + L * || x ||_1.
 
 Equivalently,
