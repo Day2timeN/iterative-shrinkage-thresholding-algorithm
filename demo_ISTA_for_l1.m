@@ -1,8 +1,7 @@
 %% Reference
 % https://people.rennes.inria.fr/Cedric.Herzet/Cedric.Herzet/Sparse_Seminar/Entrees/2012/11/12_A_Fast_Iterative_Shrinkage-Thresholding_Algorithmfor_Linear_Inverse_Problems_(A._Beck,_M._Teboulle)_files/Breck_2009.pdf
 
-%% 
-% COST FUNCTION
+%% COST FUNCTION
 % x^* = argmin_x { 1/2 * || A(X) - Y ||_2^2 + lambda * || X ||_1 }
 %
 % x^k+1 = threshold(x^k - 1/L*AT(A(x^k)) - Y), lambda/L)
@@ -69,13 +68,13 @@ x_ista          = max(x_ista, 0);
 nor             = max(x(:));
 
 mse_x_low       = immse(x_low./nor, x./nor);
-mse_x_newton    = immse(x_ista./nor, x./nor);
+mse_x_ista      = immse(x_ista./nor, x./nor);
 
 psnr_x_low      = psnr(x_low./nor, x./nor);
-psnr_x_newton   = psnr(x_ista./nor, x./nor);
+psnr_x_ista     = psnr(x_ista./nor, x./nor);
 
 ssim_x_low      = ssim(x_low./nor, x./nor);
-ssim_x_newton	= ssim(x_ista./nor, x./nor);
+ssim_x_ista     = ssim(x_ista./nor, x./nor);
 
 %% DISPLAY
 wndImg  = [0, 0.03];
@@ -85,9 +84,9 @@ colormap(gray(256));
 
 suptitle('ISTA Method');
 subplot(231);   imagesc(x,          wndImg);	axis image off;     title('ground truth');
-subplot(232);   imagesc(x_full,     wndImg);  	axis image off;     title(['full-dose_{view : ', num2str(VIEW) '}']);
-subplot(234);   imagesc(x_low,      wndImg);  	axis image off;     title({['low-dose_{view : ', num2str(VIEW) '}'], ['MSE : ' num2str(mse_x_low, '%.4e')], ['PSNR : ' num2str(psnr_x_low, '%.4f')], ['SSIM : ' num2str(ssim_x_low, '%.4f')]});
-subplot(235);   imagesc(x_ista,   wndImg);  	axis image off;     title({['recon_{newton}'], ['MSE : ' num2str(mse_x_newton, '%.4e')], ['PSNR : ' num2str(psnr_x_newton, '%.4f')], ['SSIM : ' num2str(ssim_x_newton, '%.4f')]});
+subplot(232);   imagesc(x_full,     wndImg);  	axis image off;     title(['full-dose_{FBP, view : ', num2str(VIEW) '}']);
+subplot(234);   imagesc(x_low,      wndImg);  	axis image off;     title({['low-dose_{FBP, view : ', num2str(VIEW) '}'], ['MSE : ' num2str(mse_x_low, '%.4e')], ['PSNR : ' num2str(psnr_x_low, '%.4f')], ['SSIM : ' num2str(ssim_x_low, '%.4f')]});
+subplot(235);   imagesc(x_ista,   wndImg);  	axis image off;     title({['recon_{ISTA}'], ['MSE : ' num2str(mse_x_ista, '%.4e')], ['PSNR : ' num2str(psnr_x_ista, '%.4f')], ['SSIM : ' num2str(ssim_x_ista, '%.4f')]});
 
 subplot(2,3,[3,6]); semilogy(obj, '*-');    title(COST.equation);  xlabel('# of iteration');   ylabel('Objective'); 
                                             xlim([1, niter]);   grid on; grid minor;
