@@ -52,7 +52,7 @@ niter   = 3e2;
 
 L1              = @(x) norm(x, 1);
 L2              = @(x) power(norm(x, 'fro'), 2);
-COST.equation   = '1/2 * || A(X) - Y ||_2^2 + lambda/2 * ( || X ||_1 )';
+COST.equation   = '1/2 * || A(X) - Y ||_2^2 + lambda * ( || X ||_1 )';
 COST.function	= @(x) 1/2 * L2(A(x) - y) + LAMBDA/2 * L1(x);
 
 %% RUN NEWTON METHOD
