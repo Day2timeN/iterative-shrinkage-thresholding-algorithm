@@ -22,7 +22,9 @@ where,
         
 (P2) is equal to `l1` [proximal operator](https://en.wikipedia.org/wiki/Proximal_operator),
 
-        prox_(L * l1)( x_(k) ) = soft_threshold(x_(k), L)
+        (P2) = prox_(L * l1)( x_(k) )
+        
+             = soft_threshold(x_(k), L)
         
 where, 
 
