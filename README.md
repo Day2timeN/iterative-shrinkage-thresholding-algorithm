@@ -28,7 +28,7 @@ where,
 
         l1 regularization is || x ||_1.
 
-soft_threshold is defined by,
+`soft_threshold` is defined by,
         
         function y = soft_threshold(x, L)
         y = (max(abs(x) - L, 0)).*sign(x);
