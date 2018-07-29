@@ -10,11 +10,11 @@ The class of iterative shrinkage-thresholding algorithms (ISTA) for solving line
 ## Cost function 
 Cost function is fomulated by data fidelty term `1/2 * || A(x) - y ||_2^2` and l1 regularization term `L * || X ||_1` as follow,
 
-        (P1) arg min_x 1/2 * || A(x) - y ||_2^2 + L * || x ||_1.
+        (P1) arg min_x [ 1/2 * || A(x) - y ||_2^2 + L * || x ||_1 ].
 
 Equivalently,
 
-        (P2) arg min_x 1/2 * || x - x_(k) ||_2^2 + L * || x ||_1,
+        (P2) arg min_x [ 1/2 * || x - x_(k) ||_2^2 + L * || x ||_1 ],
 
 where,
 
@@ -26,7 +26,7 @@ where,
         
 where, 
 
-        l1 regularization is || x ||_1.
+        l1 is || x ||_1.
 
 `soft_threshold` is defined by,
         
