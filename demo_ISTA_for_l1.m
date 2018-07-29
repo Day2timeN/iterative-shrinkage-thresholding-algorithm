@@ -43,11 +43,11 @@ x_low   = AINV(pn);
 
 %% NEWTON METHOD INITIALIZATION
 LAMBDA  = 1e1;
-T       = 1e-5;
+T       = 5e-6;
 
 y       = pn;
 x0      = zeros(size(x));
-niter   = 3e2;
+niter   = 2e2;
 
 L1              = @(x) norm(x, 1);
 L2              = @(x) power(norm(x, 'fro'), 2);
