@@ -35,7 +35,7 @@ where,
         end
 
 ## The basic iteration ISTA for solving problem (P2)
-        for iter = 1 : N
+        for k = 1 : N
             x_(k+1) = p_L( x_(k) )
         end
         
