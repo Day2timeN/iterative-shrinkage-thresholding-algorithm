@@ -18,7 +18,7 @@ where,
 
         x_(k)    = x_(k-1) - t_(k) * AT(A(x) - y).
         
-(P2) is equal to `l1 [proximal operator](https://en.wikipedia.org/wiki/Proximal_operator)`,
+(P2) is equal to `l1` [proximal operator](https://en.wikipedia.org/wiki/Proximal_operator),
 
         prox_(l1)(x_(k)) = soft_threshold(x, L)
         
