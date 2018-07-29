@@ -31,7 +31,7 @@ where,
 `soft_threshold` is defined by,
         
         function y = soft_threshold(x, L)
-        y = (max(abs(x) - L, 0)).*sign(x);
+            y = (max(abs(x) - L, 0)).*sign(x);
         end
 
 ## The basic iteration ISTA for solving problem (P2)
