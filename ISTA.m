@@ -13,7 +13,7 @@ if (nargin < 9)
     bfig = false;
 end
 
-if (nargin < 8)
+if (nargin < 8 || isempty(COST))
     COST.function	= @(x) (0);
     COST.equation	= [];
 end
